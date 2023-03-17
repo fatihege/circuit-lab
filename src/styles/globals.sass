@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap')
+@import "constants"
+
+*
+  margin: 0
+  padding: 0
+  outline: none
+  box-sizing: border-box
+  font-family: $primaryFont
+
+  &:focus-visible
+    outline: 3px solid $primaryColor
+    outline-offset: 2px
+    border-radius: .25rem
+
+::selection
+  color: #1c1c1c
+  background-color: transparentize($primaryColor, .5)
+
+::-webkit-scrollbar
+  width: 14px
+  height: 14px
+  background-color: #ffffff
+  border-radius: 14px
+
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background-color: $primaryColor
+  border: 4px solid #ffffff
+
+::-webkit-scrollbar-thumb:hover
+  background-color: transparentize($primaryColor, 0.2)
+
+a
+  text-decoration: none
+  font-weight: 500
+  color: $primaryColor

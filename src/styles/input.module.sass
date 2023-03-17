@@ -1,0 +1,53 @@
+@import "constants"
+
+.inputBox
+  margin-bottom: 1rem
+
+  .label
+    font-size: .8rem
+    font-weight: 500
+    color: #838383
+    display: inline-block
+    line-height: 1
+    margin-bottom: .5rem
+
+  .input
+    padding: .5rem 1rem
+    border-radius: .5rem
+    border: 2px solid #e5e5e5
+    width: 100%
+    color: #3d3d3d
+    font-weight: 500
+    font-size: .9rem
+    transition: .15s ease-out
+    transition-property: border-color, color
+    outline: none
+
+    &::placeholder
+      font-size: .8rem
+      font-weight: 500
+      color: #949494
+
+    &:focus
+      border-color: $primaryColor
+      color: $primaryColor
+
+.buttonBox
+  margin-top: 2rem
+
+  .button
+    padding: .7rem 1.5rem
+    width: 100%
+    cursor: pointer
+    border: 2px solid $primaryColor
+    border-radius: .5rem
+    background-color: $primaryColor
+    color: #fff
+    transition: .15s ease-out
+    transition-property: background-color, color
+    font-size: .8rem
+    font-weight: 500
+
+    &:hover
+      background-color: #fff
+      color: $primaryColor
