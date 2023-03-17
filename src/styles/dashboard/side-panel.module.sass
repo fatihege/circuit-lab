@@ -1,0 +1,98 @@
+@import "@/styles/constants"
+
+.sidePanelContainer
+  position: fixed
+  top: 0
+  left: 0
+  padding: 2rem
+  width: 220px
+  height: 100vh
+  background-color: #fff
+
+  .logo
+    font-size: .8rem
+    font-weight: 600
+    color: $primaryColor
+    text-align: center
+    cursor: default
+
+  .navigation
+    padding: 2rem 0
+    display: flex
+    flex-direction: column
+
+    .category
+      font-size: .8rem
+      font-weight: 600
+      color: #505050
+      cursor: default
+      margin-top: 1rem
+      padding: 0 1rem
+
+    .menuItem
+      display: flex
+      align-items: center
+      padding: .5rem 1rem
+      cursor: pointer
+      margin-top: .25rem
+      font-size: 1rem
+      color: #3d3d3d
+      border-radius: .5rem
+      position: relative
+      transition: .15s ease-out
+      transition-property: background-color, color
+      user-select: none
+
+      &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: -1.5rem
+        transform: translate(-50%, -50%)
+        width: 1rem
+        height: 1rem
+        border-radius: 100%
+        background-color: $primaryColor
+        opacity: 0
+        transition: .15s ease-out
+        transition-property: transform, opacity, left
+
+      &:hover,
+      &:focus-visible
+        background-color: $lightBlueGray2
+
+      &.active
+        background-color: $primaryColor
+        color: #fff
+
+        &::before
+          transform: translate(-50%, -50%)
+          opacity: 1
+          left: -1rem
+
+      .icon
+        font-weight: 600
+
+      .label
+        margin-left: .5rem
+        font-weight: 400
+
+  .logoutSection
+    position: absolute
+    bottom: 2rem
+
+    .logout
+      cursor: pointer
+      padding: .5rem 1rem
+      background-color: transparentize($dangerColor, .9)
+      border-radius: .5rem
+      border: none
+      color: $dangerColor
+      font-weight: 500
+      font-size: .8rem
+      transition: .15s ease-out
+      transition-property: background-color, color
+
+      &:hover
+        background-color: $dangerColor
+        color: #fff

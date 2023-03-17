@@ -1,23 +1,23 @@
 import Link from 'next/link'
 import Input from '@/components/forms/input'
 import Button from '@/components/forms/button'
-import loginStyles from '../styles/login.module.sass'
+import styles from '@/styles/form.module.sass'
 
 export default function Register() {
     return (
         <>
-            <div className={loginStyles.loginContainer}>
-                <div className={loginStyles.wrapper}>
-                    <div className={loginStyles.brandSection}>
-                        <h4>TEKNOFEST</h4>
-                        <div className={loginStyles.slogan}>
+            <div className={styles.formContainer}>
+                <div className={styles.wrapper}>
+                    <div className={styles.brandSection}>
+                        <h4>SANAL DEVREM</h4>
+                        <div className={styles.slogan}>
                             <h2>Bizimle yolculuğa başlayın.</h2>
                             <p>Sanal atölyeyi kullanmak için kayıt ol ve neler yapabileceğini keşfet.</p>
                         </div>
                     </div>
-                    <div className={loginStyles.form}>
-                        <h2 className={loginStyles.formTitle}>Kayıt ol</h2>
-                        <p className={loginStyles.signupRedirect}>
+                    <div className={styles.form}>
+                        <h2 className={styles.formTitle}>Kayıt ol</h2>
+                        <p className={styles.signupRedirect}>
                             Zaten hesabın var mı? <Link href="/login">Giriş yap</Link>
                         </p>
                         <form method="POST">

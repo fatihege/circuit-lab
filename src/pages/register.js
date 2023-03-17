@@ -5,7 +5,7 @@ export default function RegisterPage() {
     return (
         <>
             <Head>
-                <title>Kayıt Ol - Teknofest App</title>
+                <title>Kayıt Ol - Sanal Devrem</title>
             </Head>
             <Register/>
         </>
