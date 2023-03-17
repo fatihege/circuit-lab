@@ -9,7 +9,7 @@ export default function Login() {
             <div className={styles.formContainer}>
                 <div className={styles.wrapper}>
                     <div className={styles.brandSection}>
-                        <h4>SANAL DEVREM</h4>
+                        <h4>CIRCUIT LAB</h4>
                         <div className={styles.slogan}>
                             <h2>Sanal atölyene hoşgeldin.</h2>
                             <p>Hemen giriş yap ve sanal atölyeni kullanmaya başla.</p>

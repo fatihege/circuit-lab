@@ -5,7 +5,7 @@ export default function RegisterPage() {
     return (
         <>
             <Head>
-                <title>Kayıt Ol - Sanal Devrem</title>
+                <title>Kayıt Ol - Circuit Lab</title>
             </Head>
             <Register/>
         </>

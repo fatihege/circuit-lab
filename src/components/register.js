@@ -9,7 +9,7 @@ export default function Register() {
             <div className={styles.formContainer}>
                 <div className={styles.wrapper}>
                     <div className={styles.brandSection}>
-                        <h4>SANAL DEVREM</h4>
+                        <h4>CIRCUIT LAB</h4>
                         <div className={styles.slogan}>
                             <h2>Bizimle yolculuğa başlayın.</h2>
                             <p>Sanal atölyeyi kullanmak için kayıt ol ve neler yapabileceğini keşfet.</p>

@@ -3,21 +3,29 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
 import styles from '@/styles/dashboard/side-panel.module.sass'
+import {
+    OverviewIcon,
+    CalendarIcon,
+    UnitsIcon,
+    ExamsIcon,
+    SharingIcon,
+    ProfileIcon
+} from '@/components/icons'
 
 export default function SidePanel({router}) {
     const {endpoint} = router.query
     const [menuItems, setMenuItems] = useState([
         {
             type: 'link',
-            title: 'Genel Bakış | Sanal Devrem',
-            icon: 'O',
+            title: 'Genel Bakış | Circuit Lab',
+            icon: <OverviewIcon/>,
             label: 'Genel Bakış',
             tag: 'overview',
         },
         {
             type: 'link',
-            title: 'Takvim | Sanal Devrem',
-            icon: 'C',
+            title: 'Takvim | Circuit Lab',
+            icon: <CalendarIcon/>,
             label: 'Takvim',
             tag: 'calendar',
         },
@@ -27,15 +35,15 @@ export default function SidePanel({router}) {
         },
         {
             type: 'link',
-            title: 'Üniteler | Sanal Devrem',
-            icon: 'U',
+            title: 'Üniteler | Circuit Lab',
+            icon: <UnitsIcon/>,
             label: 'Üniteler',
             tag: 'units',
         },
         {
             type: 'link',
-            title: 'Sınavlar | Sanal Devrem',
-            icon: 'E',
+            title: 'Sınavlar | Circuit Lab',
+            icon: <ExamsIcon/>,
             label: 'Sınavlar',
             tag: 'exams',
         },
@@ -45,15 +53,15 @@ export default function SidePanel({router}) {
         },
         {
             type: 'link',
-            title: 'Paylaşım | Sanal Devrem',
-            icon: 'S',
+            title: 'Paylaşım | Circuit Lab',
+            icon: <SharingIcon/>,
             label: 'Paylaşım',
             tag: 'sharing',
         },
         {
             type: 'link',
-            title: 'Profil | Sanal Devrem',
-            icon: 'P',
+            title: 'Profil | Circuit Lab',
+            icon: <ProfileIcon/>,
             label: 'Profil',
             tag: 'profile',
         },
@@ -73,16 +81,14 @@ export default function SidePanel({router}) {
         } else setTitle(exists ? exists.title : '')
     }, [activeLink])
 
-    const getActiveLink = () => menuItems.find(i => i.tag === activeLink)
-
     return (
         <>
             <Head>
-                <title>{title || 'Sanal Devrem'}</title>
+                <title>{title || 'Circuit Lab'}</title>
             </Head>
             <div className={styles.sidePanelContainer}>
                 <div className={styles.logo}>
-                    SANAL DEVREM
+                    CIRCUIT LAB
                 </div>
                 <div className={styles.navigation}>
                     {menuItems.map((m, i) => m.type === 'link' ? (

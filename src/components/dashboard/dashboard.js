@@ -1,12 +1,14 @@
 import {useRouter} from 'next/router'
 import SidePanel from '@/components/dashboard/side-panel'
-import Overview from '@/components/dashboard/overview'
-import Calendar from '@/components/dashboard/calendar'
-import Units from '@/components/dashboard/units'
-import Exams from '@/components/dashboard/exams'
-import Sharing from '@/components/dashboard/sharing'
-import Profile from '@/components/dashboard/profile'
-import styles from '@/styles/dashboard.module.sass'
+import {
+    Overview,
+    Calendar,
+    Units,
+    Exams,
+    Sharing,
+    Profile
+} from '@/components/dashboard'
+import styles from '@/styles/dashboard/dashboard.module.sass'
 
 export default function Dashboard() {
     const router = useRouter()

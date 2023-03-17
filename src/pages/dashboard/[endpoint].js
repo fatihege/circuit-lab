@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Dashboard from '@/components/dashboard'
+import Dashboard from '@/components/dashboard/dashboard'
 
 export default function DashboardEndpoint() {
     return (

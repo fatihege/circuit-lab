@@ -1,4 +1,4 @@
-@import "@/styles/constants"
+@import "../constants"
 
 .sidePanelContainer
   position: fixed
@@ -70,8 +70,16 @@
           opacity: 1
           left: -1rem
 
+        .icon svg *
+          stroke: #fff
+
       .icon
-        font-weight: 600
+        width: 1.2rem
+        height: 1.2rem
+
+        svg *
+          stroke: #3d3d3d
+          transition: stroke .15s ease-out
 
       .label
         margin-left: .5rem

@@ -5,7 +5,7 @@ export default function LoginPage() {
     return (
         <>
             <Head>
-                <title>Giriş Yap - Sanal Devrem</title>
+                <title>Giriş Yap - Circuit Lab</title>
             </Head>
             <Login/>
         </>
