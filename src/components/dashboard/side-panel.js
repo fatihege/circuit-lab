@@ -10,7 +10,7 @@ import {
     ExamsIcon,
     SharingIcon,
     ProfileIcon
-} from '@/components/icons'
+} from '@/components/vectors'
 
 export default function SidePanel({router}) {
     const {endpoint} = router.query
@@ -92,7 +92,7 @@ export default function SidePanel({router}) {
                 </div>
                 <div className={styles.navigation}>
                     {menuItems.map((m, i) => m.type === 'link' ? (
-                        <Link key={i} href={m.tag} className={`${styles.menuItem} ${activeLink === m.tag ? styles.active : ''}`}>
+                        <Link key={i} href={m.tag} className={`${styles.menuItem} ${activeLink === m.tag ? styles.active : ''}`} tabIndex={i + 1}>
                             <div className={styles.icon}>
                                 {m.icon}
                             </div>
@@ -107,7 +107,7 @@ export default function SidePanel({router}) {
                     ))}
                 </div>
                 <div className={styles.logoutSection}>
-                    <button className={styles.logout} onClick={() => router.push('/login')}>
+                    <button className={styles.logout} onClick={() => router.push('/login')} tabIndex={100}>
                         Çıkış yap
                     </button>
                 </div>

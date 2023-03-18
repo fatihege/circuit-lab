@@ -1,0 +1,365 @@
+@import "../constants"
+
+.overviewContainer
+  padding: 2rem
+
+  .overviewGrid
+    display: flex
+    gap: 2.5rem
+
+    .timelineSection
+      .timelineTitle
+        font-size: 2rem
+        color: $accentColor
+
+      .timelineDescription
+        margin-top: 1rem
+        font-size: .9rem
+        font-weight: 500
+        color: #575757
+
+      .timeline
+        margin-top: 1rem
+        width: 280px
+
+        .timelineItem
+          padding: .5rem 1rem
+          border: 2px solid #e5e5e5
+          border-radius: .7rem
+          display: grid
+          grid-template-columns: 1.5rem auto 4ch
+          align-items: center
+          color: #939393
+          font-size: .9rem
+          cursor: default
+          margin-bottom: .5rem
+
+          &.past
+            background-color: transparentize($accentColor, .95)
+            border-color: transparent
+            color: transparentize($accentColor, .3)
+
+            .icon svg *
+              stroke: transparentize($accentColor, .3)
+
+          &.active
+            background-color: $accentColor
+            color: #fff
+            border-color: transparent
+            cursor: pointer
+
+            .icon svg *
+              stroke: #fff
+
+          .icon
+            width: 1.2rem
+            height: 1.2rem
+
+            svg *
+              stroke: #939393
+
+          .title
+            font-weight: 500
+            padding: 0 .5rem
+
+          .time
+            font-size: .8rem
+            font-weight: 400
+
+    .mainSection
+      width: 800px
+
+      .topGrid
+        display: grid
+        grid-template-columns: auto 1fr
+        column-gap: 2rem
+
+        .calendarWidget,
+        .greetingsWidget
+          padding: 1rem
+          border-radius: 1rem
+          background-color: #fff
+          box-shadow: 0 0 24px 0 transparentize($accentColor, .9)
+          cursor: default
+
+          .calendarDate
+            font-size: 1.5rem
+            font-weight: 600
+            color: $accentColor
+
+          .calendarTable
+            margin-top: 1rem
+            cursor: pointer
+
+            ul
+              list-style-type: none
+              display: grid
+              grid-template-columns: repeat(7, 1.7rem)
+              grid-template-rows: repeat(5, 1.7rem)
+              gap: .25rem
+
+              li
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: .5rem
+                border: 2px solid #b0b0b0
+                color: #b0b0b0
+                padding: .25rem
+                font-size: .8rem
+                font-weight: 500
+
+                &.inactiveDay
+                  opacity: .5
+
+                &.activeDay
+                  border-color: transparent
+                  background-color: $accentColor
+                  color: #fff
+
+        .greetingsWidget
+          position: relative
+          overflow: hidden
+
+          .backgroundVector
+            z-index: 0
+
+            svg
+              z-index: 0
+              position: absolute
+              width: 350px
+              top: -2rem
+              right: -4rem
+
+          .textLayer
+            position: relative
+            z-index: 1
+            width: 300px
+            top: 2rem
+            left: 1rem
+
+            h2
+              font-size: 2rem
+              color: $accentColor
+              top: 3rem
+              line-height: .8
+              margin-bottom: 1rem
+              font-weight: 600
+
+            p
+              font-weight: 400
+              color: #252525
+
+              span
+                display: block
+                margin-top: 1rem
+
+      .progressSection
+        width: 100%
+        padding: 2rem
+        background-color: #fff
+        margin-top: 2rem
+        box-shadow: 0 0 24px 0 transparentize($accentColor, .9)
+        border-radius: 1rem
+
+        .sectionTitle
+          font-size: 1.5rem
+          font-weight: 600
+          color: $accentColor
+
+        .todaysSubjects
+          margin-bottom: 2rem
+
+          .todaysSubjectsSlider
+            margin-top: 1rem
+            display: flex
+            gap: 1rem
+            position: relative
+            scroll-behavior: smooth
+            user-select: none
+
+            &:hover
+              .sliderControl
+                pointer-events: all
+
+                &.prev
+                  left: 0
+                  opacity: 1
+
+                &.next
+                  right: 0
+                  opacity: 1
+
+            .sliderControl
+              position: absolute
+              top: 50%
+              transform: translateY(-50%)
+              width: 2.5rem
+              height: 2.5rem
+              display: flex
+              justify-content: center
+              align-items: center
+              border-radius: 100%
+              background-color: $accentColor
+              border: 2px solid $accentColor
+              cursor: pointer
+              box-shadow: 0 0 16px 0 transparentize($accentColor, .5)
+              opacity: 0
+              pointer-events: none
+              transition: .15s ease-out
+              transition-property: background-color, opacity, left, right
+
+              &:focus-visible
+                pointer-events: all
+
+                &.prev
+                  left: 0
+                  opacity: 1
+
+                &.next
+                  right: 0
+                  opacity: 1
+
+              &:hover
+                background-color: #fff
+
+                svg *
+                  stroke: $accentColor
+
+              &.prev
+                left: -1rem
+
+              &.next
+                right: -1rem
+
+              svg
+                width: 1rem
+                height: 1rem
+
+                *
+                  stroke: #fff
+                  transition: stroke .25s ease-out
+
+            .todaysSubjectsSliderWrapper
+              display: flex
+              overflow-y: hidden
+              overflow-x: auto
+              padding: 1rem 2.75rem
+
+              &::-webkit-scrollbar
+                width: 0
+                height: 0
+
+              .subject
+                margin: 0 .5rem
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                gap: .5rem
+                align-items: center
+                min-width: 200px
+                max-width: 200px
+                border: 2px solid transparent
+                border-radius: 1rem
+                background-color: #fff
+                padding: 1rem
+                box-shadow: 0 0 10px 0 transparentize($accentColor, .9)
+                transition: .2s ease-out
+                transition-property: border-color, box-shadow
+
+                .icon
+                  width: 3.5rem
+                  height: 3.5rem
+                  display: flex
+                  justify-content: center
+                  align-items: center
+                  border-radius: 100%
+                  background-color: transparentize($accentColor, .95)
+
+                  svg
+                    width: 2rem
+                    height: 2rem
+
+                    *
+                      stroke: $accentColor
+
+                .title
+                  color: #3a3a3a
+                  font-size: 1rem
+                  font-weight: 600
+                  text-align: center
+                  line-height: 1
+                  word-break: break-word
+
+                .type
+                  color: #9a9a9a
+                  font-size: .8rem
+
+        .reports
+          .reportsGrid
+            margin-top: 1rem
+            max-width: 100%
+            display: grid
+            grid-template-columns: repeat(2, calc(100% / 2 - .5rem))
+            gap: 1rem
+
+            .report
+              padding: 1rem
+              background-color: #ffffff
+              box-shadow: 0 0 10px 0 transparentize($accentColor, .9)
+              border-radius: 1rem
+              display: flex
+              align-items: center
+
+              .icon
+                width: 3.5rem
+                height: 3.5rem
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: .7rem
+                background-color: transparentize($accentColor, .95)
+
+                svg
+                  width: 2rem
+                  height: 2rem
+
+                  *
+                    stroke: $accentColor
+
+              .info
+                margin-left: 1rem
+                width: max-content
+                max-width: calc(100% - 4.5rem)
+
+                .title
+                  color: #343434
+                  font-weight: 500
+                  word-break: break-word
+                  word-wrap: break-word
+
+                .progressBarWrapper
+                  margin-top: .5rem
+                  display: flex
+                  align-items: center
+
+                  .progressBar
+                    width: 200px
+                    height: .5rem
+                    background-color: $lightBlueGray2
+                    border-radius: 1rem
+                    overflow: hidden
+                    position: relative
+
+                    .progressBarFill
+                      position: absolute
+                      top: 0
+                      left: 0
+                      height: 100%
+                      background-color: $accentColor
+
+                  .progress
+                    margin-left: .5rem
+                    color: $accentColor
+                    font-weight: 600
+                    font-size: .9rem
