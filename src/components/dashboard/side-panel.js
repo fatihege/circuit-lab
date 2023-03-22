@@ -9,7 +9,7 @@ import {
     UnitsIcon,
     ExamsIcon,
     SharingIcon,
-    ProfileIcon
+    ProfileIcon, HomeworkIcon
 } from '@/components/vectors'
 
 export default function SidePanel({router}) {
@@ -46,6 +46,13 @@ export default function SidePanel({router}) {
             icon: <ExamsIcon/>,
             label: 'Sınavlar',
             tag: 'exams',
+        },
+        {
+            type: 'link',
+            title: 'Ödevler | Circuit Lab',
+            icon: <HomeworkIcon/>,
+            label: 'Ödevler',
+            tag: 'homeworks',
         },
         {
             type: 'category',

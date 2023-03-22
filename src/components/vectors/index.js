@@ -9,8 +9,11 @@ import ExamIcon from '@/components/vectors/exam'
 import GreetingsVector from '@/components/vectors/greetings'
 import ReportIcon from '@/components/vectors/report'
 import UnitIcon from '@/components/vectors/unit'
+import PrevArrowIcon from '@/components/vectors/prev-arrow'
+import NextArrowIcon from '@/components/vectors/next-arrow'
 import PrevIcon from '@/components/vectors/prev'
 import NextIcon from '@/components/vectors/next'
+import HomeworkIcon from '@/components/vectors/homework'
 
 export {
     OverviewIcon,
@@ -24,6 +27,9 @@ export {
     GreetingsVector,
     ReportIcon,
     UnitIcon,
+    PrevArrowIcon,
+    NextArrowIcon,
     PrevIcon,
     NextIcon,
+    HomeworkIcon,
 }

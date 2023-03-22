@@ -5,6 +5,7 @@ import {
     Calendar,
     Units,
     Exams,
+    Homeworks,
     Sharing,
     Profile
 } from '@/components/dashboard'
@@ -24,6 +25,7 @@ export default function Dashboard() {
                         endpoint === 'calendar' ? <Calendar/> :
                         endpoint === 'units' ? <Units/> :
                         endpoint === 'exams' ? <Exams/> :
+                        endpoint === 'homeworks' ? <Homeworks/> :
                         endpoint === 'sharing' ? <Sharing/> :
                         endpoint === 'profile' ? <Profile/> : ''
                     }

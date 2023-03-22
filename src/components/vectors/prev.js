@@ -1,7 +1,7 @@
 export default function PrevIcon() {
     return (
         <svg
-            viewBox="0 0 64 64"
+            viewBox="0 0 72 72"
             xmlns="http://www.w3.org/2000/svg"
             xmlSpace="preserve"
             style={{
@@ -13,20 +13,12 @@ export default function PrevIcon() {
             }}
         >
             <path
-                d="M0 0v64h64"
+                d="M0 5v64h64"
                 style={{
                     fill: "none",
-                    strokeWidth: "9.8px",
+                    strokeWidth: "16px",
                 }}
-                transform="matrix(.4511 .4511 -.4511 .4511 34.244 3.13)"
-            />
-            <path
-                d="M7.194 32H52.95"
-                style={{
-                    fill: "none",
-                    strokeWidth: "5.37px",
-                }}
-                transform="translate(-3 -5.244) scale(1.16387)"
+                transform="rotate(45 19.44 57.617) scale(.63796)"
             />
         </svg>
     )

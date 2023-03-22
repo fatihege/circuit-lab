@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {useRef, useState} from 'react'
-import {ExamIcon, NextIcon, PrevIcon, ReportIcon, UnitIcon} from '@/components/vectors'
+import {ExamIcon, NextArrowIcon, PrevArrowIcon, ReportIcon, UnitIcon} from '@/components/vectors'
 import styles from '@/styles/dashboard/overview.module.sass'
 
 export default function TodaysSubjectsSlider() {
@@ -46,10 +46,10 @@ export default function TodaysSubjectsSlider() {
     return (
         <div className={styles.todaysSubjectsSlider}>
             <div className={`${styles.sliderControl} ${styles.prev}`} onClick={() => scroll()} tabIndex={8}>
-                <PrevIcon/>
+                <PrevArrowIcon/>
             </div>
             <div className={`${styles.sliderControl} ${styles.next}`} onClick={() => scroll(true)} tabIndex={9}>
-                <NextIcon/>
+                <NextArrowIcon/>
             </div>
             <div className={styles.todaysSubjectsSliderWrapper} ref={slider}>
                 {subjects.map((s, i) => (

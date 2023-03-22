@@ -26,32 +26,27 @@ export default function CalendarWidget({router}) {
                 <ul>
                     {(() => {
                         const result = []
-                        const day = getDayOfWeek(new Date(currentYear, currentMonth, 1).getDay())
+                        const firstDay = getDayOfWeek(new Date(currentYear, currentMonth, 1).getDay())
                         const prevMonthLastDay = new Date(currentYear, currentMonth, 0).getDate()
 
-                        if (day > 1)
-                            for (let i = day; i > 0; i--)
-                                result.push(<li key={i} className={styles.inactiveDay}>
+                        if (firstDay > 0)
+                            for (let i = firstDay; i > 0; i--)
+                                result.push(<li key={result.length} className={styles.inactiveDay}>
                                     {prevMonthLastDay - i + 1}
                                 </li>)
-                        return result
-                    })()}
-                    {(() => {
-                        const result = []
+
                         const date = new Date()
                         for (let i = 0; i < lastDay; i++)
-                            result.push(<li key={i} className={
+                            result.push(<li key={result.length} className={
                                 i + 1 === date.getDate() &&
                                 currentMonth === date.getMonth() &&
                                 currentYear === date.getFullYear() ? styles.activeDay : ''}>{i + 1}</li>)
-                        return result
-                    })()}
-                    {(() => {
-                        const result = []
-                        const day = getDayOfWeek(new Date(currentYear, currentMonth + 1, 0).getDay())
-                        if (day < 6)
-                            for (let i = 0; i < 6 - day; i++)
-                                result.push(<li key={i} className={styles.inactiveDay}>{i + 1}</li>)
+
+                        for (let i = 0; result.length !== 42; i++) {
+                            result.push(<li key={result.length} className={styles.inactiveDay}>{i + 1}</li>)
+                            if (result.length === 42) break
+                        }
+
                         return result
                     })()}
                 </ul>
