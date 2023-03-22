@@ -21,6 +21,8 @@ export default function Register() {
                             Zaten hesabın var mı? <Link href="/login">Giriş yap</Link>
                         </p>
                         <form method="POST">
+                            <Input label="Ad" placeholder="Adınız" name="name"/>
+                            <Input label="Soyad" placeholder="Soyadınız" name="surname"/>
                             <Input label="Kullanıcı adı" placeholder="Kullanıcı adınız" name="username"/>
                             <Input label="E-posta" placeholder="E-posta adresinizi girin" name="email"/>
                             <Input label="Şifre" placeholder="Parolanızı girin" name="password" type="password"/>

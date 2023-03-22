@@ -22,17 +22,18 @@ application. (For now)
 
 Application endpoints:
 
-| Title          | Endpoint              |
-|----------------|-----------------------|
-| Login          | `/login`              |
-| Register       | `/register`           |
-| Dashboard      | `/dashboard`          |
-| Overview Panel | `/dashboard/overview` |
-| Calendar Panel | `/dashboard/calendar` |
-| Units Panel    | `/dashboard/units`    |
-| Exams Panel    | `/dashboard/exams`    |
-| Sharing Panel  | `/dashboard/sharing`  |
-| Profile Panel  | `/dashboard/profile`  |
+| Title           | Endpoint               |
+|-----------------|------------------------|
+| Login           | `/login`               |
+| Register        | `/register`            |
+| Dashboard       | `/dashboard`           |
+| Overview Panel  | `/dashboard/overview`  |
+| Calendar Panel  | `/dashboard/calendar`  |
+| Units Panel     | `/dashboard/units`     |
+| Exams Panel     | `/dashboard/exams`     |
+| Homeworks Panel | `/dashboard/homeworks` |
+| Sharing Panel   | `/dashboard/sharing`   |
+| Profile Panel   | `/dashboard/profile`   |
 
 ---
 ###### &copy; Copyright 2023 | Fatih EGE
