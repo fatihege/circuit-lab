@@ -2,13 +2,14 @@
 
 .calendarContainer
   padding: 2rem
+  display: flex
+  gap: 1rem
 
   .widgets
     .calendarWidget
       padding: 1.5rem
       border-radius: 1rem
       background-color: #fff
-      box-shadow: 0 0 24px 0 transparentize($accentColor, .9)
       width: 300px
       user-select: none
 
@@ -38,12 +39,14 @@
             height: 2rem
             border-radius: .5rem
             background-color: transparent
+            border: none
             display: flex
             justify-content: center
             align-items: center
             transition: background-color .15s ease-out
 
-            &:hover
+            &:hover,
+            &:focus-visible
               background-color: transparentize($accentColor, .9)
 
             svg
@@ -108,7 +111,6 @@
       padding: 1.5rem
       border-radius: 1rem
       background-color: #fff
-      box-shadow: 0 0 24px 0 transparentize($accentColor, .9)
       margin-top: 1rem
       cursor: default
 
@@ -130,3 +132,142 @@
         &::-webkit-scrollbar-thumb
           border: none
           background-color: #d7d7d7
+
+  .calendarSection
+    .calendar
+      width: 750px
+      height: max-content
+
+      .top
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 1rem
+
+        .heading
+          display: flex
+          align-items: center
+
+          .controls
+            display: flex
+            gap: .5rem
+            margin-right: 1rem
+
+            .control
+              width: 2rem
+              height: 2rem
+              display: flex
+              justify-content: center
+              align-items: center
+              cursor: pointer
+              border: none
+              background: transparent
+
+              svg
+                width: 1.5rem
+                height: 1.5rem
+                stroke: #3a3a3a
+
+          .date
+            font-size: 1.5rem
+            font-weight: 600
+            color: #3a3a3a
+            cursor: default
+
+        .todayButton
+          button
+            border: 2px solid $accentColor
+            border-radius: 9999px
+            padding: .25rem .5rem
+            font-size: 1rem
+            font-weight: 500
+            cursor: pointer
+            color: $accentColor
+            background-color: transparent
+            transition: .15s ease-out
+            transition-property: color, background-color
+
+            &:hover
+              color: #fff
+              background-color: $accentColor
+
+      .calendarTable
+        width: 100%
+        height: 500px
+        border-radius: 1rem
+        background-color: #fff
+        overflow: hidden
+
+        .header
+          background-color: #e8f0ff
+
+          ul
+            list-style-type: none
+            display: grid
+            grid-template-columns: repeat(7, 100px)
+            padding-left: 50px
+
+            li
+              display: flex
+              flex-direction: column
+              justify-content: center
+              align-items: center
+              padding: 1rem 0
+              height: 80px
+              color: #626b83
+              cursor: pointer
+
+              &:not(:last-child)
+                border-right: 1px solid rgba(147, 147, 147, 0.15)
+
+              &.activeDay
+                color: $accentColor
+                cursor: default
+
+              span
+                font-size: .8rem
+                font-weight: 500
+                line-height: 1
+
+              h3
+                font-size: 1.5rem
+                font-weight: 600
+                margin-top: .25rem
+
+        .rows
+          height: calc(100% - 80px)
+          overflow: auto
+
+          &::-webkit-scrollbar
+            width: 0
+            height: 0
+
+          ul
+            padding-left: 50px
+            width: 100%
+            list-style-type: none
+            display: grid
+            grid-template-columns: repeat(7, 100px)
+
+            li
+              height: 60px
+              border-top: 1px solid rgba(147, 147, 147, 0.2)
+              border-right: 1px solid rgba(147, 147, 147, 0.2)
+              position: relative
+
+              &:nth-child(-n+7)
+                border-top: none
+
+              &:nth-child(7n)
+                border-right: none
+
+              &:nth-child(7n+1):not(:first-child)::before
+                content: var(--time)
+                font-size: .7rem
+                font-weight: 500
+                position: absolute
+                left: -25px
+                top: -.5rem
+                transform: translateX(-50%)
+                color: #838383

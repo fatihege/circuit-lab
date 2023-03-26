@@ -50,12 +50,12 @@ export default function CalendarWidget() {
                     {months[currentMonth]} {currentYear}
                 </div>
                 <div className={styles.controls}>
-                    <div className={styles.control} onClick={() => updateMonth(true)}>
+                    <button className={styles.control} onClick={() => updateMonth(true)}>
                         <PrevIcon/>
-                    </div>
-                    <div className={styles.control} onClick={() => updateMonth()}>
+                    </button>
+                    <button className={styles.control} onClick={() => updateMonth()}>
                         <NextIcon/>
-                    </div>
+                    </button>
                 </div>
             </div>
             <div className={styles.days}>
