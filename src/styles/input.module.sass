@@ -51,3 +51,58 @@
     &:hover
       background-color: #fff
       color: $accentColor
+
+.checkbox
+  display: flex
+  align-items: center
+  height: 1.6rem
+  width: max-content
+  position: relative
+  padding-left: 2rem
+  margin-bottom: .5rem
+  cursor: pointer
+  font-weight: 500
+  color: #141414
+  font-size: 1rem
+  line-height: 1
+  user-select: none
+
+  input
+    position: absolute
+    opacity: 0
+    height: 0
+    width: 0
+
+    &:checked ~ span
+      background-color: $accentColor
+
+    &:checked ~ span::after
+      width: 8px
+      height: 4px
+      opacity: 1
+      transform: translate(-50%, calc(-50% - 1px)) rotate(-45deg)
+
+  span
+    position: absolute
+    top: 0
+    left: 0
+    height: 1.5rem
+    width: 1.5rem
+    background-color: transparent
+    border: 2px solid $accentColor
+    border-radius: .5rem
+    transition: background-color .1s ease-out
+
+    &::after
+      content: ""
+      width: 0
+      height: 2px
+      opacity: 0
+      border-bottom: 2px solid #fff
+      border-left: 2px solid #fff
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, calc(-50% + 1px)) rotate(-45deg)
+      transition: .1s ease-out
+      transition-property: width, height, opacity, transform

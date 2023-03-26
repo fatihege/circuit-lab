@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router'
-import CalendarWidget from '@/components/dashboard/overview/calendar-widget'
+import OverviewCalendarWidget from '@/components/dashboard/overview/calendar-widget'
 import TodaysSubjectsSlider from '@/components/dashboard/overview/todays-subjects-slider'
 import ReportsSection from '@/components/dashboard/overview/reports'
 import TimelineSection from '@/components/dashboard/overview/timeline'
@@ -20,7 +20,7 @@ export default function Overview() {
                     </div>
                     <div className={styles.mainSection}>
                         <div className={styles.topGrid}>
-                            <CalendarWidget router={router}/>
+                            <OverviewCalendarWidget router={router}/>
                             <div className={styles.greetingsWidget}>
                                 <div className={styles.backgroundVector}>
                                     <GreetingsVector/>

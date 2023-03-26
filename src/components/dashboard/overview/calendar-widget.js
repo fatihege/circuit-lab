@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import styles from '@/styles/dashboard/overview.module.sass'
 
-export default function CalendarWidget({router}) {
+export default function OverviewCalendarWidget({router}) {
     const months = [
         'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
         'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık',
