@@ -120,5 +120,13 @@
       ul
         margin-top: .5rem
         list-style-type: none
+        max-height: 200px
+        overflow-x: auto
+        padding: .25rem
 
-        li
+        &::-webkit-scrollbar
+          width: 4px
+
+        &::-webkit-scrollbar-thumb
+          border: none
+          background-color: #d7d7d7

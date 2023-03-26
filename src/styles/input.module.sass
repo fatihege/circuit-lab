@@ -82,6 +82,10 @@
       opacity: 1
       transform: translate(-50%, calc(-50% - 1px)) rotate(-45deg)
 
+    &:focus-visible ~ span
+      outline: 2px solid $accentColor
+      outline-offset: 2px
+
   span
     position: absolute
     top: 0
